@@ -9,7 +9,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("首页标题"),
       ),
-      body: Container(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        physics: BouncingScrollPhysics(),
+        child: Container(
         margin: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
@@ -113,8 +116,81 @@ class HomePage extends StatelessWidget {
                 Navigator.pushNamed(context, "/image");
               },
             ),
+            RaisedButton(
+              child: Text("flutter布局权重，类似Android weight"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/adapterLayout");
+              },
+            ),
+            RaisedButton(
+              child: Text("ListView案例"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/listViewWidget");
+              },
+            ),
+            RaisedButton(
+              child: Text("GridView案例"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/gridView");
+              },
+            ),
+            RaisedButton(
+              child: Text("层叠样式组件"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/cascading");
+              },
+            ),
+            RaisedButton(
+              child: Text("底部导航栏"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/bottomNavigation");
+              },
+            ),
+            RaisedButton(
+              child: Text("appBar标题栏和状态栏"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/appBar");
+              },
+            ),
+            RaisedButton(
+              child: Text("FloatinActionButton"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/floatingBtn");
+              },
+            ),
+            RaisedButton(
+              child: Text("表单控件"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/formWidget");
+              },
+            ),
+            RaisedButton(
+              child: Text("Scan扫一扫"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/homeScreen");
+              },
+            ),
+            RaisedButton(
+              child: Text("强制横屏显示"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/horizontalScreen");
+              },
+            ),
+            RaisedButton(
+              child: Text("redux状态管理"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/redux");
+              },
+            ),
+            RaisedButton(
+              child: Text("SharedPreferences使用"),
+              onPressed: (){
+                Navigator.pushNamed(context, "/sharedPreferences");
+              },
+            ),
           ],
         ),
+      ),
       ),
     );
   }

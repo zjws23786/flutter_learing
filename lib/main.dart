@@ -2,13 +2,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/routes/Routes.dart';
+import 'package:flutter_app/utils/SharedPreferencesUtils.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyApp());}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+class _MyAppState extends State<MyApp> {
+
+  @override
+  void initState() {
+    _initAsync();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +28,17 @@ class MyApp extends StatelessWidget {
 //          title: Text("flutter热身运动"),
 //        ),
 //      ),
-      initialRoute: "/", //初始化的时候加载的路由
-      onGenerateRoute: onGenerateRoute,
+        initialRoute: "/", //初始化的时候加载的路由
+        onGenerateRoute: onGenerateRoute,
     );
   }
+
+  void _initAsync() async {
+    await SharedPreferencesUtil.getInstance();
+  }
 }
+
+
 
 
 
